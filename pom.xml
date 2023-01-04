@@ -18,6 +18,20 @@
         <project.build.number>NO-CI</project.build.number>
     </properties>
 
+    <profiles>
+        <profile>
+            <id>ci</id>
+            <activation>
+                <property>
+                    <name>env.BUILD_NUMBER</name>
+                </property>
+            </activation>
+            <properties>
+                <project.build.number>${env.BUILD_NUMBER}</project.build.number>
+            </properties>
+        </profile>
+    </profiles>
+
     <repositories>
         <repository>
             <id>spigot-repo</id>
